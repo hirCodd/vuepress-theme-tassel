@@ -1,16 +1,12 @@
 {
-  "name": "@vuepress/theme-default",
-  "version": "1.0.0-alpha.42",
-  "description": "Default theme for VuePress",
+  "name": "vuepress-theme-tassel",
+  "version": "1.0.0",
+  "description": "a theme for vuepress",
   "main": "index.js",
   "publishConfig": {
     "access": "public"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vuejs/vuepress.git",
-    "directory": "packages/@vuepress/theme-default"
-  },
+  "repository": "git+https://github.com/hirCodd/vuepress-theme-tassel.git",
   "keywords": [
     "documentation",
     "vue",
@@ -26,9 +22,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vuejs/vuepress/issues"
+    "url": "https://github.com/hirCodd/vuepress-theme-tassel/issues"
   },
-  "homepage": "https://github.com/vuejs/vuepress/packages/@vuepress/theme-default#readme",
+  "homepage": "https://www.finen.top",
   "dependencies": {
     "@vuepress/plugin-active-header-links": "^1.0.0-alpha.42",
     "@vuepress/plugin-container": "^1.0.0-alpha.42",
@@ -37,6 +33,5 @@
     "docsearch.js": "^2.5.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2"
-  },
-  "gitHead": "f4ce75f73e4d5b64ff552501eada396b0cec5679"
+  }
 }
