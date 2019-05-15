@@ -64,9 +64,10 @@
 <script>
 import { resolvePage, normalize, outboundRE, endingSlashRE } from '../util'
 import Comments from './Comments.vue'
+import TitleContent from './TitleContent.vue'
 export default {
   props: ['sidebarItems'],
-  components: {Comments},
+  components: {Comments, TitleContent},
   data (){
     return {
       viewComments: 'Comments',
