@@ -3,31 +3,38 @@
     <div class="cardpage" style="padding-bottom: 40px;">
       <el-card shadow="always" :body-style="{ padding: '0px' }" class="box-card">
         <img
-          src="https://finen-1251602255.cos.ap-shanghai.myqcloud.com/blog/home/hero.png"
+          :src="config.homeSrc"
           class="image"
         >
         <div class="nickname">
-          <span class="nick">Finen</span>
+          <span class="nick">{{config.nickname}}</span>
         </div>
         <div style="padding: 16px;" class="motto">
-          <span>Stay Hungry, Stay Foolish!</span>
+          <span>{{config.signature}}</span>
         </div>
         <el-row class="funct-button" style="padding: 20px;">
-          <el-button round @click="openPage('https://github.com/hirCodd')">Github</el-button>
-          <el-button round @click="openPage('https://blog.csdn.net/HookJony')">CSDN</el-button>
+          <el-button round @click="openPage(config.urllink1)">{{config.urllink1_text}}</el-button>
+          <el-button round @click="openPage(config.urllink2)">{{config.urllink2_text}}</el-button>
         </el-row>
       </el-card>
     </div>
 
     <hr>
     <div class="footer">
-      <p>Copyright © 2017-2019 Finen</p>
+      <p>{{config.footer}}</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'HomeLayout',
+  props: {
+    config: {
+      type: Object,
+      default: {}
+    }
+  },
   data() {
     return {};
   },

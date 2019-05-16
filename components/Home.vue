@@ -1,6 +1,6 @@
 <template>
   <main class="home" aria-labelledby="main-title">
-    <header class="hero">
+    <header class="hero" v-if="$site.themeConfig.homeConfig == null">
       <img
         v-if="data.heroImage"
         :src="$withBase(data.heroImage)"
@@ -22,6 +22,9 @@
           :item="actionLink"
         />
       </p>
+    </header>
+    <header class="hero" v-else>
+      <HomeLayout :config="$site.themeConfig.homeConfig"></HomeLayout>
     </header>
 
     <div
@@ -51,9 +54,10 @@
 
 <script>
 import NavLink from '@theme/components/NavLink.vue'
+import HomeLayout from '@theme/components/HomeLayout.vue'
 
 export default {
-  components: { NavLink },
+  components: { NavLink, HomeLayout },
 
   computed: {
     data () {

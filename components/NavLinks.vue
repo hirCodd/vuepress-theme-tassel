@@ -74,6 +74,9 @@ export default {
         }
         return [...this.userNav, languageDropdown]
       }
+      // blog主题自定义配置
+      const blogConfig = $ste.themeConfig.blogConfig || {};
+
       return this.userNav
     },
 

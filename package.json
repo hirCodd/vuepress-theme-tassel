@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-tassel",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "a theme for vuepress",
   "main": "index.js",
   "publishConfig": {

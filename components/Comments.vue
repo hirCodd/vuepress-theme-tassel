@@ -18,19 +18,27 @@ export default {
   
   methods: {
     createValine() {
-      const Valine = require('valine');
-      window.AV = require('leancloud-storage')
-      const valine =  new Valine({
-        el: '#vcomments',
-        appId: 'piM1Wm7mzq4fsj7RfCCJ7slE-gzGzoHsz',
-        appKey: 'vdSq43byXijVSfd0Y5qY0vf8',
-        notify: false,
-        verify: false,
-        avatar: 'monsterid',
-        path: window.location.pathname,
-        placeholder: '欢迎留言与我分享您的想法...',
-      });
-      this.valineRefresh = false
+      const valineConfig = this.$themeConfig.valineConfig;
+      if (valineConfig) {
+        const Valine = require('valine')
+        window.AV = require('leancloud-storage')
+        // 在themeConfig中可配置valine的参数，参数值与valine官网保持相同
+        const valine =  new Valine({
+          el: '#vcomments',
+          appId: valineConfig.appId,
+          appKey: valineConfig.appKey,
+          notify: valineConfig.notify,
+          verify: valineConfig.verify,
+          avatar: valineConfig.avatar,
+          placeholder: valineConfig.placeholder,
+          pageSize: valineConfig.pageSize,
+          visitor: valineConfig.visitor,
+          highlight: valineConfig.highlight,
+          recordIP: valineConfig.recordIP,
+          path: window.location.pathname
+        });
+        this.valineRefresh = false
+      }
     }
   },
   watch: {

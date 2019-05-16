@@ -67,7 +67,7 @@ import Comments from './Comments.vue'
 import TitleContent from './TitleContent.vue'
 export default {
   props: ['sidebarItems'],
-  components: {Comments, TitleContent},
+  components: { Comments, TitleContent },
   data (){
     return {
       viewComments: 'Comments',
