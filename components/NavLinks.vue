@@ -76,6 +76,7 @@ export default {
       }
       // blog主题自定义配置
       const blogConfig = $ste.themeConfig.blogConfig || {};
+      console.log($site.themeConfig.blogConfig)
 
       return this.userNav
     },

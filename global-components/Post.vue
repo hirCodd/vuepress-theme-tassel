@@ -8,7 +8,7 @@
           <router-link :to="item.regularPath">{{ item.frontmatter.title }}</router-link>
         </p>
         <div class="abstract" v-html="item.excerpt">{{item.excerpt}}</div>
-        <hr/>
+        <hr>
         <div class="archives-tag">
           <i class="fa fa-user" aria-hidden="true">{{ item.frontmatter.author || $site.themeConfig.author }}</i>
           <i class="fa fa-calendar" aria-hidden="true">{{ item.frontmatter.date }}</i>
