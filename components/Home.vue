@@ -1,6 +1,6 @@
 <template>
-  <main class="home" aria-labelledby="main-title">
-    <header class="hero" v-if="$site.themeConfig.homeConfig == null">
+  <main class="home" aria-labelledby="main-title" v-if="$site.themeConfig.homeConfig == null">
+    <header class="hero">
       <img
         v-if="data.heroImage"
         :src="$withBase(data.heroImage)"
@@ -23,10 +23,6 @@
         />
       </p>
     </header>
-    <header class="hero" v-else>
-      <HomeLayout :config="$site.themeConfig.homeConfig"></HomeLayout>
-    </header>
-
     <div
       class="features"
       v-if="data.features && data.features.length"
@@ -49,6 +45,9 @@
     >
       {{ data.footer }}
     </div>
+  </main>
+  <main class="home" aria-labelledby="main-title" v-else>
+    <HomeLayout :config="$site.themeConfig.homeConfig"></HomeLayout>
   </main>
 </template>
 

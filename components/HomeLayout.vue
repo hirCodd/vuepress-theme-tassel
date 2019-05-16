@@ -19,7 +19,7 @@
       </el-card>
     </div>
 
-    <hr>
+    <!-- <hr> -->
     <div class="footer">
       <p>{{config.footer}}</p>
     </div>
