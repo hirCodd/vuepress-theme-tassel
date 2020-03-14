@@ -1,18 +1,22 @@
 <template>
-  <div class="post-content" style="margin-top: 50px">
-    <div class="content-top">Posts</div>
-    <hr/>
+<div>
+
+  <div class="content" style="">
+    <div class="content-top" v-if="$site.themeConfig.homePage != 'Post'">Posts<hr/></div>
+
     <div class="post-card">
       <el-card v-for="item in PostsArray.slice((currentPage-1)*pagesize, currentPage*pagesize)">
         <p class="article-title">
-          <router-link :to="item.regularPath">{{ item.frontmatter.title }}</router-link>
+          <router-link style="text-decoration: none" :to="item.regularPath">{{ item.frontmatter.title }}</router-link>
         </p>
         <div class="abstract" v-html="item.excerpt">{{item.excerpt}}</div>
         <hr>
         <div class="archives-tag">
-          <i class="fa fa-user" aria-hidden="true">{{ item.frontmatter.author || $site.themeConfig.author }}</i>
-          <i class="fa fa-calendar" aria-hidden="true">{{ item.frontmatter.date }}</i>
-          <i class="fa fa-tag" aria-hidden="true" v-for="tag in item.frontmatter.tags">{{ tag }}</i>
+          <i class="fa fa-tags" aria-hidden="true" v-for="tag in item.frontmatter.tags">
+            <span class="i-text">{{ tag }}</span>
+          </i>
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
+          <span class="i-text">{{ item.frontmatter.date }}</span>
         </div>
       </el-card>
     </div>
@@ -26,6 +30,27 @@
       </el-pagination>
     </div>
   </div>
+  <div class="footer" v-if="$site.themeConfig.homePage == 'Post'">
+      <p class="footer-list" style="color: #424242;">
+        <span v-if="$site.themeConfig.homeConfig.copyright">
+          <i class="fa fa-copyright" aria-hidden="true"></i>
+          <a class="copyright" style="color: #424242;">{{$site.themeConfig.homeConfig.copyright}}</a>
+        </span>
+        <span v-if="$site.themeConfig.homeConfig.beian">
+          <i class="fa fa-shield" aria-hidden="true"></i>
+          <a class="filing" style="color: #424242;">{{$site.themeConfig.homeConfig.beian}}</a>
+        </span>
+        <span>
+          <i class="fa fa-book" aria-hidden="true"></i>
+          <a class="theme" href="https://github.com/hirCodd/vuepress-theme-tassel" style="color: #424242;" target="_blank">主题 — vuepress-theme-tassel</a>
+        </span>
+        <span v-if="$site.themeConfig.homeConfig.github">
+          <i class="fa fa-github" aria-hidden="true"></i>
+          <a class="github" style="color: #424242;" :href="$site.themeConfig.homeConfig.github_url">{{$site.themeConfig.homeConfig.github}}</a>
+        </span>
+      </p>
+    </div>
+</div>
 </template>
 
 <script>
@@ -101,7 +126,7 @@ export default {
 };
 </script>
 <style>
-.post-content > .content-top {
+.content > .content-top {
   margin: 5px 0 15px 0px;
   font-size: 18px;
   font-weight: 600;
@@ -134,5 +159,36 @@ export default {
 }
 .archives-tag > .article-tag > .el-tag {
   margin-left: 5px;
+}
+</style>
+<style lang="stylus">
+@media (min-width: 1200px) {
+  .footer {
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .footer-list i {
+    margin-left: 1rem;
+  }
+}
+@media (max-width: $MQMobile) {
+  .footer {
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-align: left!important
+  }
+  .footer span {
+    display: block
+    line-height 2rem
+  }
+  .footer-list i {
+    margin-left: .5rem;
+  }
 }
 </style>

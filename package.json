@@ -1,34 +1,43 @@
 {
-  "name": "vuepress-theme-tassel",
-  "version": "1.0.6",
-  "description": "a theme for vuepress",
+  "name": "@vuepress/theme-default",
+  "version": "1.3.1",
+  "description": "Default theme for VuePress",
+  "keywords": [
+    "documentation",
+    "generator",
+    "vue",
+    "vuepress"
+  ],
+  "homepage": "https://github.com/vuejs/vuepress/packages/@vuepress/theme-default#readme",
+  "bugs": {
+    "url": "https://github.com/vuejs/vuepress/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuejs/vuepress.git",
+    "directory": "packages/@vuepress/theme-default"
+  },
+  "license": "MIT",
+  "author": "Evan You",
   "main": "index.js",
+  "dependencies": {
+    "@vuepress/plugin-active-header-links": "^1.3.1",
+    "@vuepress/plugin-nprogress": "^1.3.1",
+    "@vuepress/plugin-search": "^1.3.1",
+    "docsearch.js": "^2.5.2",
+    "lodash": "^4.17.15",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "vuepress-plugin-container": "^2.0.2",
+    "vuepress-plugin-smooth-scroll": "^0.0.3"
+  },
   "publishConfig": {
     "access": "public"
   },
-  "repository": "git+https://github.com/hirCodd/vuepress-theme-tassel.git",
-  "keywords": [
-    "documentation",
-    "vue",
-    "vuepress",
-    "generator"
-  ],
-  "author": "Finen",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/hirCodd/vuepress-theme-tassel/issues"
-  },
-  "homepage": "https://www.finen.top",
-  "dependencies": {
-    "@vuepress/plugin-active-header-links": "^1.0.0-alpha.42",
-    "@vuepress/plugin-container": "^1.0.0-alpha.42",
-    "@vuepress/plugin-nprogress": "^1.0.0-alpha.42",
-    "@vuepress/plugin-search": "^1.0.0-alpha.42",
-    "docsearch.js": "^2.5.2",
-    "leancloud-storage": "^3.13.2",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
-    "valine": "^1.3.6",
-    "element-ui": "2.7.0"
-  }
+  "maintainers": [
+    {
+      "name": "ULIVZ",
+      "email": "chl814@foxmail.com"
+    }
+  ]
 }
